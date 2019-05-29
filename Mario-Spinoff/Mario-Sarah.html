@@ -10,25 +10,47 @@
 </head>
 <body>
 
-<canvas id="myCanvas" width="640" height="420"></canvas>
+<canvas id="myCanvas" width="700" height="420"></canvas>
 
 <script>
-    //canvas
+    // canvas
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
 
-    // mario
+    var img = document.createElement("img");
+
+    img.src = "mario.png";
+
+
+    canvas.appendChild(img);
+
     var x = canvas.width/2;
     var y = canvas.height-30;
-    var dx = 2;
-    var dy = -2;
+    var left = -2;
+    var right = 2;
+    var up = -2;
+    var down = 2;
+
+
+
+
 
 
     // sample code
-    // var paddle2Height = 10;
-    // var paddle2Width = 75;
-    // var paddle2X = canvas.width - 15;
-    // var paddle2Y = ((canvas.height-paddle2Height) / 2) - 45;
+    var paddle2Height = 10;
+    var paddle2Width = 75;
+    var paddle2X = canvas.width - 15;
+    var paddle2Y = ((canvas.height-paddle2Height) / 2) - 45;
+
+    function land1 () {
+        ctx.beginPath();
+        ctx.rect(paddle1X, paddle1Y, paddle1Height, paddle1Width);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
+    }
+
+
     // var upPressed = false;
     // var downPressed = false;
 
@@ -96,7 +118,7 @@
       // stuffs?  requestAnimationFrame(draw);
     }
 
-    draw();
+    // draw();
 </script>
 
 </body>
